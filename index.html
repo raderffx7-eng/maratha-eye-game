@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maratha Eye - Battle Royale</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="screen-login" class="screen active">
+        <div class="panel login-panel">
+          <div class="logo">MARATHA EYE</div>
+          <h1>Guest Mode</h1>
+          <input id="playerNameInput" type="text" maxlength="16" placeholder="Enter your name" value="Player01" />
+          <button id="guestBtn">PLAY AS GUEST</button>
+        </div>
+      </section>
+
+      <section id="screen-loading" class="screen">
+        <div class="panel loading-panel">
+          <h2>LOADING</h2>
+          <div class="bar">
+            <div id="loadingFill"></div>
+          </div>
+          <div id="loadingText">Initializing game...</div>
+        </div>
+      </section>
+
+      <section id="screen-lobby" class="screen">
+        <div class="hud header-bar">
+          <div class="brand">MARATHA EYE</div>
+          <div class="players">50 Players</div>
+        </div>
+
+        <div class="lobby-grid">
+          <div class="lobby-card main-card">
+            <div class="avatar">G</div>
+            <h3 id="profileName">Player01</h3>
+            <p>Rank: Rookie</p>
+            <button id="startBtn">START</button>
+          </div>
+
+          <div class="lobby-card">
+            <h4>Quick Match</h4>
+            <p>Battle Royale</p>
+            <button id="settingsBtn">SETTINGS</button>
+          </div>
+
+          <div class="lobby-card">
+            <h4>Vault</h4>
+            <p>Weapons & Items</p>
+            <button id="vaultBtn">OPEN</button>
+          </div>
+
+          <div class="lobby-card">
+            <h4>Profile</h4>
+            <p>Stats & Career</p>
+            <button id="profileBtn">VIEW</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-settings" class="screen">
+        <div class="panel settings-panel">
+          <h2>SETTINGS</h2>
+
+          <label>
+            HUD
+            <input type="range" id="hudRange" min="0" max="100" value="80" />
+          </label>
+
+          <label>
+            Sensitivity
+            <input type="range" id="sensitivityRange" min="0" max="100" value="65" />
+          </label>
+
+          <label>
+            Volume
+            <input type="range" id="volumeRange" min="0" max="100" value="50" />
+          </label>
+
+          <button id="backToLobbyBtn">BACK TO LOBBY</button>
+        </div>
+      </section>
+
+      <section id="screen-match" class="screen">
+        <div class="match-ui">
+          <div class="topBar">
+            <div id="matchInfo">50 Players</div>
+            <div id="timerText">60</div>
+            <div id="phaseText">Preparing</div>
+          </div>
+
+          <div class="leftPanel">
+            <div class="stat">HP: <span id="hpStat">100</span></div>
+            <div class="stat">Ammo: <span id="ammoStat">30</span></div>
+            <div class="stat">Weapon: <span id="weaponStat">M4</span></div>
+          </div>
+
+          <div class="rightPanel">
+            <button id="ejectBtn" class="hidden">EJECT</button>
+          </div>
+
+          <canvas id="gameCanvas" width="980" height="560"></canvas>
+        </div>
+      </section>
+
+      <section id="screen-result" class="screen">
+        <div class="panel result-panel">
+          <h2 id="resultTitle">MATCH COMPLETE</h2>
+          <p id="resultText">You survived... or not.</p>
+          <button id="playAgainBtn">PLAY AGAIN</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

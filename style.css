@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #050b13;
+  color: white;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0b1220 0%, #101d2c 100%);
+}
+
+.screen.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel {
+  width: 420px;
+  background: rgba(17, 24, 39, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 32px 24px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #ffb703;
+  margin-bottom: 18px;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 18px;
+}
+
+input {
+  width: 100%;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid #2b3a52;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  padding: 0 14px;
+  font-size: 18px;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffb703 0%, #f7a600 100%);
+  color: #111;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.loading-panel {
+  width: 480px;
+}
+
+.bar {
+  width: 100%;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#loadingFill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #36d399, #3b82f6);
+  transition: width 0.2s ease;
+}
+
+#loadingText {
+  margin-top: 14px;
+  color: #d1d5db;
+}
+
+.header-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 24px;
+  font-weight: 700;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.lobby-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 24px;
+  width: min(760px, 75vw);
+  padding-top: 80px;
+}
+
+.lobby-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-card {
+  grid-column: span 2;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #f59e0b, #f97316);
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #1f2937;
+}
+
+.settings-panel {
+  width: 460px;
+}
+
+.settings-panel label {
+  display: block;
+  text-align: left;
+  margin: 18px 0;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.settings-panel input[type="range"] {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.match-ui {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #09131b 0%, #152b39 100%);
+}
+
+.topBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-weight: 700;
+  z-index: 3;
+}
+
+.leftPanel {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 3;
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.rightPanel {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+}
+
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(180deg, #0b1f2c 0%, #153d50 52%, #2a8041 100%);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.result-panel {
+  width: 460px;
+}
